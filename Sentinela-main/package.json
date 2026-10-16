@@ -1,0 +1,20 @@
+{
+  "name": "sentinela",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env backend/server.js",
+    "admin": "node --env-file-if-exists=.env scripts/tornar-admin.js",
+    "test": "node --test backend/utils/*.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "better-sqlite3-multiple-ciphers": "^12.0.0"
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sentinela - Administração</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="dashboard-container">
+
+        <header class="dashboard-header">
+
+            <div class="dashboard-logo">
+
+                <div class="dashboard-logo-icon">
+                    🔒
+                </div>
+
+                <div>
+                    <h1>Sentinela</h1>
+                    <p>Área administrativa</p>
+                </div>
+
+            </div>
+
+            <button class="btn-sair" id="btn-sair">
+                Sair
+            </button>
+
+        </header>
+
+
+        <section class="dashboard-welcome">
+
+            <h2>👥 Gerenciamento de usuários</h2>
+
+            <p>
+                Visualize e gerencie os usuários cadastrados no sistema.
+            </p>
+
+        </section>
+
+
+        <section class="admin-summary">
+
+            <div class="admin-summary-card">
+                <span>👥</span>
+                <div>
+                    <strong id="total-usuarios">0</strong>
+                    <p>Total de usuários</p>
+                </div>
+            </div>
+
+            <div class="admin-summary-card">
+                <span>👑</span>
+                <div>
+                    <strong id="total-admins">0</strong>
+                    <p>Administradores</p>
+                </div>
+            </div>
+
+            <div class="admin-summary-card">
+                <span>🟢</span>
+                <div>
+                    <strong id="total-ativos">0</strong>
+                    <p>Contas ativas</p>
+                </div>
+            </div>
+
+            <div class="admin-summary-card">
+                <span>🔴</span>
+                <div>
+                    <strong id="total-bloqueados">0</strong>
+                    <p>Contas bloqueadas</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="lista-usuarios" class="admin-users">
+
+            <p>Carregando usuários...</p>
+
+        </section>
+
+
+        <div class="cadastro-link">
+
+            <p>
+                <a href="dashboard.html">
+                    Voltar para o Dashboard
+                </a>
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sentinela - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="dashboard-container">
+
+        <header class="dashboard-header">
+
+            <div class="dashboard-logo">
+
+                <div class="dashboard-logo-icon">
+                    🔒
+                </div>
+
+                <div>
+                    <h1>Sentinela</h1>
+                    <p>Painel de segurança</p>
+                </div>
+
+            </div>
+
+            <button class="btn-sair" id="btn-sair">
+                Sair
+            </button>
+
+        </header>
+
+        <section class="dashboard-welcome">
+
+            <h2>Bem-vindo!</h2>
+
+            <p>
+                Acompanhe sua conta e suas informações de segurança.
+            </p>
+
+        </section>
+
+        <section class="dashboard-cards">
+
+            <a href="perfil.html" class="dashboard-card">
+
+                <span>👤</span>
+
+                <h3>Meu Perfil</h3>
+
+                <p>
+                    Visualize e atualize seus dados.
+                </p>
+
+            </a>
+
+            <a href="atividades.html" class="dashboard-card">
+
+                <span>📋</span>
+
+                <h3>Atividades</h3>
+
+                <p>
+                    Consulte as atividades da sua conta.
+                </p>
+
+            </a>
+
+            <a href="#" class="dashboard-card">
+
+                <span>🛡️</span>
+
+                <h3>Segurança</h3>
+
+                <p>
+                    Confira informações de segurança.
+                </p>
+
+            </a>
+
+            <a href="admin.html" class="dashboard-card" id="card-admin" style="display: none;">
+
+                <span>👑</span>
+
+                <h3>Administração</h3>
+
+                <p>
+                    Gerencie os usuários do sistema.
+                </p>
+
+            </a>
+
+        </section>
+
+        <section class="account-status">
+
+            <h3>Status da conta</h3>
+
+            <p>
+                🟢 Conta ativa
+            </p>
+
+        </section>
+
+    </main>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

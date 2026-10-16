@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinela - Meu Perfil</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="dashboard-logo">
+                <div class="dashboard-logo-icon">🔒</div>
+                <div>
+                    <h1>Sentinela</h1>
+                    <p>Meu perfil</p>
+                </div>
+            </div>
+            <button class="btn-sair" id="btn-sair">Sair</button>
+        </header>
+
+        <section class="dashboard-welcome">
+            <h2>Meu Perfil</h2>
+            <p>Confira e atualize as informações da sua conta.</p>
+        </section>
+
+        <section class="account-status">
+            <h3>Informações da conta</h3>
+
+            <div class="form-group">
+                <label for="perfil-nome">Nome</label>
+                <input type="text" id="perfil-nome" maxlength="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="perfil-email">E-mail</label>
+                <input type="email" id="perfil-email" maxlength="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="senha-atual">Senha atual</label>
+                <input type="password" id="senha-atual" maxlength="50" placeholder="Digite sua senha atual">
+            </div>
+
+            <div class="form-group">
+                <label for="nova-senha">Nova senha</label>
+                <input type="password" id="nova-senha" maxlength="50" placeholder="Digite sua nova senha">
+            </div>
+
+            <div class="form-group">
+                <label for="confirmar-nova-senha">Confirmar nova senha</label>
+                <input type="password" id="confirmar-nova-senha" maxlength="50" placeholder="Digite a nova senha novamente">
+            </div>
+
+            <p><strong>Tipo de usuário:</strong> <span id="perfil-tipo">Carregando...</span></p>
+            <p><strong>Status:</strong> 🟢 Conta ativa</p>
+
+            <button type="button" class="btn-entrar" id="btn-salvar">Salvar alterações</button>
+        </section>
+
+        <div class="cadastro-link">
+            <p><a href="dashboard.html">Voltar para o Dashboard</a></p>
+        </div>
+    </main>
+    <script src="js/perfil.js"></script>
+</body>
+</html>

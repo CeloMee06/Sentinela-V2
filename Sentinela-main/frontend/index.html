@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinela - Login</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <main class="login-container">
+
+        <div class="logo">
+            <div class="logo-icon">🔒</div>
+
+            <h1>Sentinela</h1>
+
+            <p>Proteção e controle de acesso</p>
+        </div>
+
+        <form id="login-form">
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu e-mail"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+
+                <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Digite sua senha"
+                    maxlength="50"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-entrar">
+                Entrar
+            </button>
+
+        </form>
+
+        <div class="cadastro-link">
+            <p>
+                Ainda não possui uma conta?
+                <a href="cadastro.html">Criar conta</a>
+            </p>
+        </div>
+
+    </main>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
