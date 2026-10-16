@@ -1,7 +1,6 @@
 const express = require("express");
 
 const db = require("../database/database");
-const { mascararEmail } = require("../utils/mascaramento");
 const {
     verificarSessao,
     verificarAdministrador
@@ -13,18 +12,21 @@ const protegerAdmin = [verificarSessao, verificarAdministrador];
 router.get("/usuarios", protegerAdmin, (req, res) => {
     try {
         const usuarios = db.prepare(`
-            SELECT id, nome, email, tipo, bloqueado, criado_em
-            FROM usuarios
+            SELECT
+                id,
+                nome,
+                email_mascarado AS email,
+                tipo,
+                bloqueado,
+                criado_em
+            FROM vw_usuarios_administracao
             ORDER BY criado_em DESC
-        `).all().map((usuario) => ({
-            ...usuario,
-            email: mascararEmail(usuario.email)
-        }));
+        `).all();
 
         res.set("Cache-Control", "no-store");
         res.status(200).json({ usuarios });
     } catch (erro) {
-        console.error("Erro ao buscar usuários:", erro);
+        console.error("Erro ao buscar usuários pela View:", erro);
         res.status(500).json({
             mensagem: "Não foi possível carregar os usuários."
         });

@@ -48,9 +48,13 @@ db.exec(`
         nome TEXT NOT NULL,
         email TEXT NOT NULL UNIQUE,
         senha TEXT NOT NULL,
-        tipo TEXT NOT NULL DEFAULT 'usuario' CHECK (tipo IN ('usuario', 'admin')),
-        bloqueado INTEGER NOT NULL DEFAULT 0 CHECK (bloqueado IN (0, 1)),
-        criado_em DATETIME DEFAULT CURRENT_TIMESTAMP
+        tipo TEXT NOT NULL DEFAULT 'usuario'
+            CONSTRAINT ck_usuarios_tipo
+            CHECK (tipo IN ('usuario', 'admin')),
+        bloqueado INTEGER NOT NULL DEFAULT 0
+            CONSTRAINT ck_usuarios_bloqueado
+            CHECK (bloqueado IN (0, 1)),
+        criado_em DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
 
     CREATE TABLE IF NOT EXISTS atividades (
@@ -61,6 +65,30 @@ db.exec(`
         criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
         FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
     );
+
+    DROP VIEW IF EXISTS vw_usuarios_administracao;
+
+    CREATE VIEW vw_usuarios_administracao AS
+    SELECT
+        id,
+        nome,
+        CASE
+            WHEN instr(email, '@') > 1 THEN
+                substr(
+                    email,
+                    1,
+                    CASE
+                        WHEN instr(email, '@') - 1 < 3
+                            THEN instr(email, '@') - 1
+                        ELSE 3
+                    END
+                ) || '***@' || substr(email, instr(email, '@') + 1)
+            ELSE '***'
+        END AS email_mascarado,
+        tipo,
+        bloqueado,
+        criado_em
+    FROM usuarios;
 `);
 
 module.exports = db;

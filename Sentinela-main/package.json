@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node --env-file-if-exists=.env backend/server.js",
     "admin": "node --env-file-if-exists=.env scripts/tornar-admin.js",
-    "test": "node --test backend/utils/*.test.js"
+    "test": "node --test backend/utils/*.test.js backend/database/*.test.js",
+    "test:requisitos": "node --test backend/database/requisitos-seguranca.test.js"
   },
   "keywords": [],
   "author": "",
